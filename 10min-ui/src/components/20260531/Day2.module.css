@@ -1,0 +1,49 @@
+.btn {
+    position: relative;
+
+    color: #333;
+    padding-block: 10px;
+    padding-inline: 30px;
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+}
+
+/* ::before ::after HTMLには書かれていない要素もどきを作ることができる */
+/* ::before 要素の直前に内容を追加 */
+/* ::after 要素の直後に内容を追加 */
+/* <h1> ::beforeのcontentが追加 こんにちは ::afterのcontentが追加 </h1> */
+/* メリット：HTMLコードを汚さず様々な表現ができる */
+.btn::before,
+.btn::after {
+    /* content 挿入したい文字などを書く */
+    content: '';
+
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+
+    background: #333;
+    width: 100%;
+    height: 2px;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.btn::after {
+    width: 0;
+    background: blue;
+}
+
+.btn:hover::after {
+    width: 100%;
+}
+
+/* 通常時は */
+/* 上 ::after 横幅0% */
+/* 下 ::before 横幅100% */
+
+/* ホバー時 */
+/* 上 ::after 横幅が0 -> 50 -> 100% と伸びていく */
+/* 下 ::before 横幅100%（::afterの線で隠れていく） */
