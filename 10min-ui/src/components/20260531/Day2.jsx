@@ -1,6 +1,6 @@
 import styles from './Day2.module.css'
 
-function Day1() {
+function Day2() {
   return (
     <div>
       <h2>Day2</h2>
@@ -12,4 +12,4 @@ function Day1() {
   )
 }
 
-export default Day1
+export default Day2
