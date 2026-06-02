@@ -1,0 +1,121 @@
+.wrapper {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    list-style: none;
+}
+
+.ul li {
+    width: 30%;
+    max-width: 300px;
+    height: 38px;
+    position: relative;
+}
+
+.ul li:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 100%;
+    border-left: solid 1px black;
+    border-top: solid 1px black;
+    border-radius: 20px 0 0;
+    top: 0;
+    left: 50%;
+    transform: translate(0);
+}
+
+.ul li:nth-child(2) {
+    position: relative;
+    z-index: 1;
+}
+
+.ul li:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 15px);
+    border-right: solid 1px black;
+    border-top: solid 1px black;
+    border-radius: 0 20px 0 0;
+    top: 0;
+    right: 50%;
+    transform: translate(0);
+    z-index: 1;
+}
+
+.ul li:nth-child(2)::after {
+    content: '';
+    width: 20px;
+    aspect-ratio: 1;
+    position: absolute;
+    top: -1px;
+    right: 50%;
+    background-color: rgb(255, 255, 255);
+    z-index: 0;
+}
+
+.ul li:nth-child(3)::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: calc(100% - 15px);
+    border-right: solid 1px black;
+    border-top: solid 1px black;
+    border-radius: 0 20px 0 0;
+    top: 0;
+    right: 50%;
+    transform: translate(0);
+}
+
+.ul li span {
+    position: absolute;
+    aspect-ratio: 1;
+    width: 8px;
+    left: calc(50% - 0.5px);
+    bottom: 13.5px;
+    transform: translate(-50%) rotate(45deg);
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+}
+
+.ul_content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    list-style: none;
+}
+
+.ul_content li {
+    width: 30%;
+    max-width: 300px;
+    background: rgb(190, 175, 158);
+    padding: 10% 0;
+    border-radius: 100rem;
+    position: relative;
+}
+
+.ul_content li::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    aspect-ratio: 1;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    border-radius: 4px;
+}
+
+.ul_content li div {
+    height: 200px;
+}
